@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Directives>
+	<Application>
+		<Assembly Name="Microsoft.EntityFrameworkCore" Dynamic="Required All">
+			<Type Name="Microsoft.EntityFrameworkCore.Internal.DbContextFactory`1[[VideoMonitoring.CameraDbContext, VideoMonitoring]]" Dynamic="Required All" />
+			<Type Name="Microsoft.EntityFrameworkCore.Storage.ValueConversion.EnumToNumberConverter`2[[VideoMonitoring.CameraVendor, VideoMonitoring],[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
+			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.EntryCurrentValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
+			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
+			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Boolean, System.Private.CoreLib]]" Dynamic="Required All" />
+			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1[[VideoMonitoring.CameraVendor, VideoMonitoring]]" Dynamic="Required All" />
+		</Assembly>
+		<Assembly Name="Microsoft.EntityFrameworkCore.Relational" Dynamic="Required All">
+			<Type Name="Microsoft.EntityFrameworkCore.Query.Internal.RelationalQueryContextFactory" Dynamic="Required All" />
+			<Type Name="Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor+ShaperProcessingExpressionVisitor">
+				<Method Name="IncludeReference" Dynamic="Required">
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+				</Method>
+				<Method Name="InitializeIncludeCollection" Dynamic="Required">
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+				</Method>
+				<Method Name="InitializeSplitIncludeCollection" Dynamic="Required">
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+				</Method>
+				<Method Name="InitializeCollection" Dynamic="Required">
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+				</Method>
+				<Method Name="PopulateCollection" Dynamic="Required">
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+				</Method>
+				<Method Name="InitializeSplitCollection" Dynamic="Required">
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+				</Method>
+				<Method Name="PopulateSplitCollection" Dynamic="Required">
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+				</Method>
+				<Method Name="PopulateSplitCollectionAsync" Dynamic="Required">
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+					<GenericArgument Name="System.Object, System.Private.CoreLib" />
+				</Method>
+			</Type>
+		</Assembly>
+	</Application>
+</Directives>
