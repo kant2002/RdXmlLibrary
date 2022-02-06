@@ -7,7 +7,11 @@
 		<Assembly Name="Microsoft.AspNetCore.Mvc.Core" Dynamic="Required All">
 			<Type Name="Microsoft.Extensions.Internal.PropertyHelper">
 				<Method Name="CallNullSafePropertyGetter" Dynamic="Required">
-					<GenericArgument Name="VideoMonitoring.Pages.ErrorModel, VideoMonitoring" />
+					<!--
+						Change WebApplication.Pages.ErrorModel to full type name of the ErrorModel
+						WebApplicationAssembly is name of your assembly where ErrorModel class is located.
+					-->
+					<GenericArgument Name="WebApplication.Pages.ErrorModel, WebApplicationAssembly" />
 					<GenericArgument Name="System.Boolean, System.Private.CoreLib" />
 				</Method>
 				<Method Name="CallPropertySetter" Dynamic="Required">

@@ -2,12 +2,16 @@
 <Directives>
 	<Application>
 		<Assembly Name="Microsoft.EntityFrameworkCore" Dynamic="Required All">
-			<Type Name="Microsoft.EntityFrameworkCore.Internal.DbContextFactory`1[[VideoMonitoring.CameraDbContext, VideoMonitoring]]" Dynamic="Required All" />
-			<Type Name="Microsoft.EntityFrameworkCore.Storage.ValueConversion.EnumToNumberConverter`2[[VideoMonitoring.CameraVendor, VideoMonitoring],[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
+			<!--
+				Change MyApp.MyDbContext to full name of your DbContext,
+				Change MyAppAssembly to name of the assembly where DbContext type is located.
+			-->
+			<Type Name="Microsoft.EntityFrameworkCore.Internal.DbContextFactory`1[[MyApp.MyDbContext, MyAppAssembly]]" Dynamic="Required All" />
+			<Type Name="Microsoft.EntityFrameworkCore.Storage.ValueConversion.EnumToNumberConverter`2[[System.Object, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
 			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.EntryCurrentValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
 			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
 			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Boolean, System.Private.CoreLib]]" Dynamic="Required All" />
-			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1[[VideoMonitoring.CameraVendor, VideoMonitoring]]" Dynamic="Required All" />
+			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1[[System.Object, System.Private.CoreLib]]" Dynamic="Required All" />
 		</Assembly>
 		<Assembly Name="Microsoft.EntityFrameworkCore.Relational" Dynamic="Required All">
 			<Type Name="Microsoft.EntityFrameworkCore.Query.Internal.RelationalQueryContextFactory" Dynamic="Required All" />
