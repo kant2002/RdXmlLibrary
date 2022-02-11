@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Directives>
+  <!--
+	  This file is part of RdXmlLibrary project.
+	  Visit https://github.com/kant2002/rdxmllibrary for latest version.
+	  If you have modifications specific to this Nuget package,
+	  please contribute back.
+  -->
 	<Application>
 		<Assembly Name="System.Text.Json">
 			<Type Name="System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5[[GraphQL.Instrumentation.ApolloTrace,GraphQL],[System.DateTime,System.Private.CoreLib],[System.Double,System.Private.CoreLib],[System.Object,System.Private.CoreLib],[System.Object,System.Private.CoreLib]]" Dynamic="Required All" />
