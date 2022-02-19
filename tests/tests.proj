@@ -29,11 +29,17 @@
         WorkingDirectory="$(MSBuildThisFileDirectory)">
       <Output TaskParameter="ConsoleOutput" PropertyName="NativeAotTestOutput" />
     </Exec>
-    <Message Text="------------------  FAILED!  --------------------" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
-    <Message Text="------------------  CoreCLR  --------------------" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
-    <Message Text="$(CoreClrTestOutput)" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
-    <Message Text="------------------ NativeAOT --------------------" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
-    <Message Text="$(NativeAotTestOutput)" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
+
+    <PropertyGroup>
+      <TestFailedMessage>
+------------------  CoreCLR  --------------------
+$(CoreClrTestOutput)
+------------------ NativeAOT --------------------
+$(NativeAotTestOutput)
+      </TestFailedMessage>
+    </PropertyGroup>
+
+    <Error Text="$(TestFailedMessage)" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
   </Target>
 
 </Project>
