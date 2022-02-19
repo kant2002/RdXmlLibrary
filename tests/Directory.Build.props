@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <RestoreAdditionalProjectSources Condition="$(PublishNativeAot) == True">
+      https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json;
+      $(RestoreAdditionalProjectSources)
+    </RestoreAdditionalProjectSources>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="7.0.0-*" Condition="$(PublishNativeAot) == True" />
+  </ItemGroup>
+
+</Project>

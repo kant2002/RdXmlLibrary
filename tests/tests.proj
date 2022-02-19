@@ -1,0 +1,39 @@
+<Project>
+
+  <PropertyGroup>
+    <TestedRuntimeIdentifier Condition="$([MSBuild]::IsOSPlatform('Windows'))">win-x64</TestedRuntimeIdentifier>
+    <TestedRuntimeIdentifier Condition="$([MSBuild]::IsOSPlatform('Linux'))">linux-x64</TestedRuntimeIdentifier>
+
+    <TestConfiguration Condition="'$(TestConfiguration)' == ''">Release</TestConfiguration>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <TestProject Include="FSharp.Core.Tests" />
+  </ItemGroup>
+
+  <Target Name="Build">
+    <Exec Command="dotnet build -c $(TestConfiguration) %(TestProject.Identity)"
+        WorkingDirectory="$(MSBuildThisFileDirectory)" />
+    <Exec Command="dotnet publish -c $(TestConfiguration) -r $(TestedRuntimeIdentifier) %(TestProject.Identity) --self-contained -p:PublishNativeAot=True"
+        WorkingDirectory="$(MSBuildThisFileDirectory)" />
+  </Target>
+
+  <Target Name="VSTest" DependsOnTargets="Build">
+    <Exec Command="dotnet run -c $(TestConfiguration) --project %(TestProject.Identity)"
+        ConsoleToMSBuild="true"
+        WorkingDirectory="$(MSBuildThisFileDirectory)">
+      <Output TaskParameter="ConsoleOutput" PropertyName="CoreClrTestOutput" />
+    </Exec>
+    <Exec Command="%(TestProject.Identity)/bin/$(TestConfiguration)/$(TestedRuntimeIdentifier)/publish/%(TestProject.Identity)"
+        ConsoleToMSBuild="true"
+        WorkingDirectory="$(MSBuildThisFileDirectory)">
+      <Output TaskParameter="ConsoleOutput" PropertyName="NativeAotTestOutput" />
+    </Exec>
+    <Message Text="------------------  FAILED!  --------------------" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
+    <Message Text="------------------  CoreCLR  --------------------" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
+    <Message Text="$(CoreClrTestOutput)" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
+    <Message Text="------------------ NativeAOT --------------------" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
+    <Message Text="$(NativeAotTestOutput)" Condition="$(CoreClrTestOutput) != $(NativeAotTestOutput)" />
+  </Target>
+
+</Project>
