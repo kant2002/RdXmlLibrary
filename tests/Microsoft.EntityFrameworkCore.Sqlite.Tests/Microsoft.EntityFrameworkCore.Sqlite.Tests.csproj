@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <RdXmlFile Include="$(RdXmlLibraryPath)\Microsoft.EntityFrameworkCore.rd.xml" />
+    <RdXmlFile Include="$(RdXmlLibraryPath)\Microsoft.EntityFrameworkCore.Sqlite.rd.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0" />
+  </ItemGroup>
+
+
+</Project>

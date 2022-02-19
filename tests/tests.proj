@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <TestProject Include="FSharp.Core.Tests" />
+    <TestProject Include="Microsoft.EntityFrameworkCore.Sqlite.Tests" />
   </ItemGroup>
 
   <Target Name="Build">
