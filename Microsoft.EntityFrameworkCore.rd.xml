@@ -12,6 +12,19 @@
 			<Type Name="Microsoft.EntityFrameworkCore.Storage.ValueConversion.EnumToNumberConverter`2[[System.Object, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
 			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.EntryCurrentValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
 			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1[[System.Object, System.Private.CoreLib]]" Dynamic="Required All" />
+			<!-- If key type is int (my guess) -->
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMapFactoryFactory" Dynamic="Required All">
+                <Method Name="CreateFactory" Dynamic="Required All">
+                    <GenericArgument Name="System.Int32,System.Private.CoreLib" />
+                </Method>
+            </Type>
+
+			<!--
+				This is description for each primitive column types.
+				If some primitive types are missing, just copy whole block and change type.
+				Also please contribute back these changes. 
+			-->
+
 			<!-- Column of type int present in the entity -->
 			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
             <Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyAccessorsFactory" Dynamic="Required All">
@@ -47,6 +60,40 @@
             </Type>
 			<!-- Column of type bool present in the entity -->
 			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Boolean, System.Private.CoreLib]]" Dynamic="Required All" />
+			<Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyAccessorsFactory" Dynamic="Required All">
+                <Method Name="CreateGeneric" Dynamic="Required All">
+                    <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
+                </Method>
+            </Type>
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry" Dynamic="Required All">
+                <Method Name="ReadStoreGeneratedValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
+                </Method>
+                <Method Name="ReadTemporaryValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
+                </Method>
+                <Method Name="ReadOriginalValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
+                </Method>
+                <Method Name="ReadRelationshipSnapshotValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
+                </Method>
+                <Method Name="GetCurrentValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
+                </Method>
+            </Type>
+            <Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.ClrAccessorFactory`1[[Microsoft.EntityFrameworkCore.Metadata.Internal.ClrPropertyGetter`2[[System.Object,System.Private.CoreLib],[System.Int32,System.Private.CoreLib]],Microsoft.EntityFrameworkCore]]" Dynamic="Required All">
+                <Method Name="CreateGeneric" Dynamic="Required All">
+                    <GenericArgument Name="System.Object,System.Private.CoreLib" />
+                    <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
+                    <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
+                </Method>
+            </Type>
+            <Type Name="Microsoft.EntityFrameworkCore.Infrastructure.ExpressionExtensions" Dynamic="Required All">
+                <Method Name="ValueBufferTryReadValue" Dynamic="Required">
+                    <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
+                </Method>
+            </Type>
 			<!-- Column of type DateTime present in the entity -->
 			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.DateTime, System.Private.CoreLib]]" Dynamic="Required All" />
             <Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyAccessorsFactory" Dynamic="Required All">
@@ -83,12 +130,49 @@
                     <GenericArgument Name="System.DateTime,System.Private.CoreLib" />
                 </Method>
             </Type>
-			<!-- If key type is int (my guess) -->
-            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMapFactoryFactory" Dynamic="Required All">
-                <Method Name="CreateFactory" Dynamic="Required All">
-                    <GenericArgument Name="System.Int32,System.Private.CoreLib" />
+			<!-- Column of type Int64 present in the entity -->
+			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Int64, System.Private.CoreLib]]" Dynamic="Required All" />
+            <Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyAccessorsFactory" Dynamic="Required All">
+                <Method Name="CreateGeneric" Dynamic="Required All">
+                    <GenericArgument Name="System.Int64,System.Private.CoreLib" />
                 </Method>
             </Type>
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry" Dynamic="Required All">
+                <Method Name="ReadStoreGeneratedValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Int64,System.Private.CoreLib" />
+                </Method>
+                <Method Name="ReadTemporaryValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Int64,System.Private.CoreLib" />
+                </Method>
+                <Method Name="ReadOriginalValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Int64,System.Private.CoreLib" />
+                </Method>
+                <Method Name="ReadRelationshipSnapshotValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Int64,System.Private.CoreLib" />
+                </Method>
+                <Method Name="GetCurrentValue" Dynamic="Required All">
+                    <GenericArgument Name="System.Int64,System.Private.CoreLib" />
+                </Method>
+            </Type>
+            <Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.ClrAccessorFactory`1[[Microsoft.EntityFrameworkCore.Metadata.Internal.ClrPropertyGetter`2[[System.Object,System.Private.CoreLib],[System.Int32,System.Private.CoreLib]],Microsoft.EntityFrameworkCore]]" Dynamic="Required All">
+                <Method Name="CreateGeneric" Dynamic="Required All">
+                    <GenericArgument Name="System.Object,System.Private.CoreLib" />
+                    <GenericArgument Name="System.Int64,System.Private.CoreLib" />
+                    <GenericArgument Name="System.Int64,System.Private.CoreLib" />
+                </Method>
+            </Type>
+            <Type Name="Microsoft.EntityFrameworkCore.Infrastructure.ExpressionExtensions" Dynamic="Required All">
+                <Method Name="ValueBufferTryReadValue" Dynamic="Required">
+                    <GenericArgument Name="System.Int64,System.Private.CoreLib" />
+                </Method>
+            </Type>
+
+			<!--
+				This is example definitions for shape of the entities.
+				More columns, more type parameters should be in generic type. 
+			-->
+
+			<!-- Table1 (int) -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`1[[System.Int32,System.Private.CoreLib]]" Dynamic="Required All" />
 			<!-- Table2 (int, int) -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.Int32,System.Private.CoreLib],[System.Int32,System.Private.CoreLib]]" Dynamic="Required All" />
@@ -96,6 +180,10 @@
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.Int32,System.Private.CoreLib],[System.String,System.Private.CoreLib]]" Dynamic="Required All" />
 			<!-- Table4 (int, DateTime) -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.Int32,System.Private.CoreLib],[System.DateTime,System.Private.CoreLib]]" Dynamic="Required All" />
+			<!-- Table5 (int, long) -->
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.Int32,System.Private.CoreLib],[System.Int64,System.Private.CoreLib]]" Dynamic="Required All" />
+			<!-- Table6 (string, long) -->
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.String,System.Private.CoreLib],[System.Int64,System.Private.CoreLib]]" Dynamic="Required All" />
 		</Assembly>
 		<Assembly Name="Microsoft.EntityFrameworkCore.Relational" Dynamic="Required All">
 			<Type Name="Microsoft.EntityFrameworkCore.Query.Internal.RelationalQueryContextFactory" Dynamic="Required All" />
