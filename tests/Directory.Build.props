@@ -5,6 +5,7 @@
       $(RestoreAdditionalProjectSources)
     </RestoreAdditionalProjectSources>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <RdXmlLibraryPath>$(MSBuildThisFileDirectory)\..</RdXmlLibraryPath>
   </PropertyGroup>
 
   <ItemGroup>

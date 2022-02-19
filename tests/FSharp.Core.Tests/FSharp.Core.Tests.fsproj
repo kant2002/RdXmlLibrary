@@ -9,4 +9,8 @@
     <Compile Include="Program.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <RdXmlFile Include="$(RdXmlLibraryPath)\FSharp.Core.xml" />
+  </ItemGroup>
+
 </Project>
