@@ -12,7 +12,24 @@
 			<Type Name="Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryStringFactory" Dynamic="Required All" />
 		</Assembly>
 		<Assembly Name="System.Private.CoreLib" Dynamic="Required All">
-			<Type Name="System.DateOnly" Dynamic="Required All" />
+            <Type Name="System.DateTime" Dynamic="Required All">
+                <Method Name="AddYears" Dynamic="Required" />
+                <Method Name="AddMonths" Dynamic="Required" />
+                <Method Name="AddDays" Dynamic="Required" />
+                <Method Name="AddHours" Dynamic="Required" />
+                <Method Name="AddMinutes" Dynamic="Required" />
+                <Method Name="AddSeconds" Dynamic="Required" />
+                <Method Name="AddMilliseconds" Dynamic="Required" />
+                <Method Name="AddTicks" Dynamic="Required" />
+            </Type>
+            <Type Name="System.DateOnly" Dynamic="Required All">
+                <Method Name="AddYears" Dynamic="Required" />
+                <Method Name="AddMonths" Dynamic="Required" />
+                <Method Name="AddDays" Dynamic="Required" />
+            </Type>
+            <Type Name="System.Guid" Dynamic="Required All">
+                <Method Name="NewGuid" Dynamic="Required" />
+            </Type>
 		</Assembly>
 		<Assembly Name="SQLitePCLRaw.batteries_v2" Dynamic="Required All">
 			<Type Name="SQLitePCL.Batteries_V2" Dynamic="Required All" />
