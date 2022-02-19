@@ -20,7 +20,7 @@
   </Target>
 
   <Target Name="VSTest" DependsOnTargets="Build">
-    <Exec Command="dotnet run -c $(TestConfiguration) --project %(TestProject.Identity)"
+    <Exec Command="dotnet run --no-build -c $(TestConfiguration) --project %(TestProject.Identity)"
         ConsoleToMSBuild="true"
         WorkingDirectory="$(MSBuildThisFileDirectory)">
       <Output TaskParameter="ConsoleOutput" PropertyName="CoreClrTestOutput" />
