@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="7.0.0-*" Condition="$(PublishNativeAot) == True" />
+    <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="7.0.0-preview.3.22118.4" Condition="$(PublishNativeAot) == True" />
   </ItemGroup>
 
 </Project>
