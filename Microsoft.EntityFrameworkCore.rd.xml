@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Directives>
-	<Application>
+    <Application>
   <!--
-	  This file is part of RdXmlLibrary project.
-	  Visit https://github.com/kant2002/rdxmllibrary for latest version.
-	  If you have modifications specific to this Nuget package,
-	  please contribute back.
+      This file is part of RdXmlLibrary project.
+      Visit https://github.com/kant2002/rdxmllibrary for latest version.
+      If you have modifications specific to this Nuget package,
+      please contribute back.
+
+      Look at the https://github.com/hez2010/EFCore.NativeAOT.RdGenerator for automatic
+      code generation for EF Core.
   -->
-		<Assembly Name="Microsoft.EntityFrameworkCore" Dynamic="Required All">
-			<Type Name="Microsoft.EntityFrameworkCore.Internal.DbContextFactory`1[[Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore]]" Dynamic="Required All" />
-			<Type Name="Microsoft.EntityFrameworkCore.Storage.ValueConversion.EnumToNumberConverter`2[[System.Object, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
-			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.EntryCurrentValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
-			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1[[System.Object, System.Private.CoreLib]]" Dynamic="Required All" />
-			<!-- If key type is int (my guess) -->
+        <Assembly Name="Microsoft.EntityFrameworkCore" Dynamic="Required All">
+            <Type Name="Microsoft.EntityFrameworkCore.Internal.DbContextFactory`1[[Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore]]" Dynamic="Required All" />
+            <Type Name="Microsoft.EntityFrameworkCore.Storage.ValueConversion.EnumToNumberConverter`2[[System.Object, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.EntryCurrentValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1[[System.Object, System.Private.CoreLib]]" Dynamic="Required All" />
+            <!-- If key type is int -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMapFactoryFactory" Dynamic="Required All">
                 <Method Name="CreateFactory" Dynamic="Required All">
                     <GenericArgument Name="System.Int32,System.Private.CoreLib" />
                 </Method>
             </Type>
 
-			<!--
-				This is description for each primitive column types.
-				If some primitive types are missing, just copy whole block and change type.
-				Also please contribute back these changes. 
-			-->
+            <!--
+                This is description for each primitive column types.
+                If some primitive types are missing, just copy whole block and change type.
+                Also please contribute back these changes. 
+            -->
 
-			<!-- Column of type int present in the entity -->
-			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
+            <!-- Column of type int present in the entity -->
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Int32, System.Private.CoreLib]]" Dynamic="Required All" />
             <Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyAccessorsFactory" Dynamic="Required All">
                 <Method Name="CreateGeneric" Dynamic="Required All">
                     <GenericArgument Name="System.Int32,System.Private.CoreLib" />
@@ -58,9 +61,9 @@
                     <GenericArgument Name="System.Int32,System.Private.CoreLib" />
                 </Method>
             </Type>
-			<!-- Column of type bool present in the entity -->
-			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Boolean, System.Private.CoreLib]]" Dynamic="Required All" />
-			<Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyAccessorsFactory" Dynamic="Required All">
+            <!-- Column of type bool present in the entity -->
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Boolean, System.Private.CoreLib]]" Dynamic="Required All" />
+            <Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyAccessorsFactory" Dynamic="Required All">
                 <Method Name="CreateGeneric" Dynamic="Required All">
                     <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
                 </Method>
@@ -94,8 +97,8 @@
                     <GenericArgument Name="System.Boolean,System.Private.CoreLib" />
                 </Method>
             </Type>
-			<!-- Column of type DateTime present in the entity -->
-			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.DateTime, System.Private.CoreLib]]" Dynamic="Required All" />
+            <!-- Column of type DateTime present in the entity -->
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.DateTime, System.Private.CoreLib]]" Dynamic="Required All" />
             <Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyAccessorsFactory" Dynamic="Required All">
                 <Method Name="CreateGeneric" Dynamic="Required All">
                     <GenericArgument Name="System.DateTime,System.Private.CoreLib" />
@@ -130,8 +133,8 @@
                     <GenericArgument Name="System.DateTime,System.Private.CoreLib" />
                 </Method>
             </Type>
-			<!-- Column of type Int64 present in the entity -->
-			<Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Int64, System.Private.CoreLib]]" Dynamic="Required All" />
+            <!-- Column of type Int64 present in the entity -->
+            <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer+DefaultValueComparer`1[[System.Int64, System.Private.CoreLib]]" Dynamic="Required All" />
             <Type Name="Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyAccessorsFactory" Dynamic="Required All">
                 <Method Name="CreateGeneric" Dynamic="Required All">
                     <GenericArgument Name="System.Int64,System.Private.CoreLib" />
@@ -167,71 +170,101 @@
                 </Method>
             </Type>
 
-			<!--
-				This is example definitions for shape of the entities.
-				More columns, more type parameters should be in generic type. 
-			-->
+            <!--
+                This is example definitions for shape of the entities.
+                More columns, more type parameters should be in generic type. 
+            -->
 
-			<!-- Table1 (int) -->
+            <!-- Table1 (int) -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`1[[System.Int32,System.Private.CoreLib]]" Dynamic="Required All" />
-			<!-- Table2 (int, int) -->
+            <!-- Table2 (int, int) -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.Int32,System.Private.CoreLib],[System.Int32,System.Private.CoreLib]]" Dynamic="Required All" />
-			<!-- Table3 (int, string) -->
+            <!-- Table3 (int, string) -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.Int32,System.Private.CoreLib],[System.String,System.Private.CoreLib]]" Dynamic="Required All" />
-			<!-- Table4 (int, DateTime) -->
+            <!-- Table4 (int, DateTime) -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.Int32,System.Private.CoreLib],[System.DateTime,System.Private.CoreLib]]" Dynamic="Required All" />
-			<!-- Table5 (int, long) -->
+            <!-- Table5 (int, long) -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.Int32,System.Private.CoreLib],[System.Int64,System.Private.CoreLib]]" Dynamic="Required All" />
-			<!-- Table6 (string, long) -->
+            <!-- Table6 (string, long) -->
             <Type Name="Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot`2[[System.String,System.Private.CoreLib],[System.Int64,System.Private.CoreLib]]" Dynamic="Required All" />
-		</Assembly>
-		<Assembly Name="Microsoft.EntityFrameworkCore.Relational" Dynamic="Required All">
-			<Type Name="Microsoft.EntityFrameworkCore.Query.Internal.RelationalQueryContextFactory" Dynamic="Required All" />
-			<Type Name="Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor+ShaperProcessingExpressionVisitor">
-				<Method Name="IncludeReference" Dynamic="Required">
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-				</Method>
-				<Method Name="InitializeIncludeCollection" Dynamic="Required">
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-				</Method>
-				<Method Name="InitializeSplitIncludeCollection" Dynamic="Required">
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-				</Method>
-				<Method Name="InitializeCollection" Dynamic="Required">
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-				</Method>
-				<Method Name="PopulateCollection" Dynamic="Required">
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-				</Method>
-				<Method Name="InitializeSplitCollection" Dynamic="Required">
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-				</Method>
-				<Method Name="PopulateSplitCollection" Dynamic="Required">
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-				</Method>
-				<Method Name="PopulateSplitCollectionAsync" Dynamic="Required">
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-					<GenericArgument Name="System.Object, System.Private.CoreLib" />
-				</Method>
-			</Type>
-			<!-- SaveChanges related -->
+        </Assembly>
+        <Assembly Name="Microsoft.EntityFrameworkCore.Relational" Dynamic="Required All">
+            <Type Name="Microsoft.EntityFrameworkCore.Query.Internal.RelationalQueryContextFactory" Dynamic="Required All" />
+            <Type Name="Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor+ShaperProcessingExpressionVisitor">
+                <Method Name="IncludeReference" Dynamic="Required">
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                </Method>
+                <Method Name="InitializeIncludeCollection" Dynamic="Required">
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                </Method>
+                <Method Name="InitializeSplitIncludeCollection" Dynamic="Required">
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                </Method>
+                <Method Name="InitializeCollection" Dynamic="Required">
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                </Method>
+                <Method Name="PopulateCollection" Dynamic="Required">
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                </Method>
+                <Method Name="InitializeSplitCollection" Dynamic="Required">
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                </Method>
+                <Method Name="PopulateSplitCollection" Dynamic="Required">
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                </Method>
+                <Method Name="PopulateSplitCollectionAsync" Dynamic="Required">
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                    <GenericArgument Name="System.Object, System.Private.CoreLib" />
+                </Method>
+            </Type>
+            <!-- SaveChanges related -->
             <Type Name="Microsoft.EntityFrameworkCore.Update.Internal.KeyValueIndexFactorySource" Dynamic="Required All">
                 <Method Name="CreateFactory" Dynamic="Required">
-					<!-- Guess this is entity key -->
+                    <!-- This is entity key -->
                     <GenericArgument Name="System.Int32,System.Private.CoreLib" />
                 </Method>
             </Type>
-		</Assembly>
-	</Application>
+        </Assembly>
+        <Assembly Name="System.Private.CoreLib" Dynamic="Required All">
+            <Type Name="System.DateTimeOffset" Dynamic="Required All">
+                <Method Name="AddYears" Dynamic="Required" />
+                <Method Name="AddMonths" Dynamic="Required" />
+                <Method Name="AddDays" Dynamic="Required" />
+                <Method Name="AddHours" Dynamic="Required" />
+                <Method Name="AddMinutes" Dynamic="Required" />
+                <Method Name="AddSeconds" Dynamic="Required" />
+                <Method Name="AddMilliseconds" Dynamic="Required" />
+                <Method Name="AddTicks" Dynamic="Required" />
+            </Type>
+            <Type Name="System.DateTime" Dynamic="Required All">
+                <Method Name="AddYears" Dynamic="Required" />
+                <Method Name="AddMonths" Dynamic="Required" />
+                <Method Name="AddDays" Dynamic="Required" />
+                <Method Name="AddHours" Dynamic="Required" />
+                <Method Name="AddMinutes" Dynamic="Required" />
+                <Method Name="AddSeconds" Dynamic="Required" />
+                <Method Name="AddMilliseconds" Dynamic="Required" />
+                <Method Name="AddTicks" Dynamic="Required" />
+            </Type>
+            <Type Name="System.DateOnly" Dynamic="Required All">
+                <Method Name="AddYears" Dynamic="Required" />
+                <Method Name="AddMonths" Dynamic="Required" />
+                <Method Name="AddDays" Dynamic="Required" />
+            </Type>
+            <Type Name="System.Guid" Dynamic="Required All">
+                <Method Name="NewGuid" Dynamic="Required" />
+            </Type>
+        </Assembly>
+    </Application>
 </Directives>

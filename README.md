@@ -20,6 +20,10 @@ Look at the libraries which your app is using and add nescessary rd.xml files. F
 
 After that, if you need put customizations which are specific to your app, put them into `rd.xml` file.
 
+## Related projects
+
+- EF Core NativeAOT RdGenerator https://github.com/hez2010/EFCore.NativeAOT.RdGenerator
+
 ## Testing
 
 ```
