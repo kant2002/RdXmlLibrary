@@ -10,6 +10,7 @@
   <ItemGroup>
     <TestProject Include="FSharp.Core.Tests" />
     <TestProject Include="Microsoft.EntityFrameworkCore.Sqlite.Tests" />
+    <TestProject Include="Microsoft.AspNetCore.Tests" />
   </ItemGroup>
 
   <Target Name="Build">
@@ -20,14 +21,14 @@
   </Target>
 
   <Target Name="VSTest" DependsOnTargets="Build">
-    <Exec Command="dotnet run --no-build -c $(TestConfiguration) --project %(TestProject.Identity)"
+    <Exec Command="dotnet run --no-build -c $(TestConfiguration) --no-launch-profile --project %(TestProject.Identity)"
         ConsoleToMSBuild="true"
         WorkingDirectory="$(MSBuildThisFileDirectory)">
       <Output TaskParameter="ConsoleOutput" PropertyName="CoreClrTestOutput" />
     </Exec>
-    <Exec Command="%(TestProject.Identity)/bin/$(TestConfiguration)/$(TestedRuntimeIdentifier)/publish/%(TestProject.Identity)"
+    <Exec Command="bin/$(TestConfiguration)/$(TestedRuntimeIdentifier)/publish/%(TestProject.Identity)"
         ConsoleToMSBuild="true"
-        WorkingDirectory="$(MSBuildThisFileDirectory)">
+        WorkingDirectory="$(MSBuildThisFileDirectory)/%(TestProject.Identity)">
       <Output TaskParameter="ConsoleOutput" PropertyName="NativeAotTestOutput" />
     </Exec>
 
