@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Directives>
+  <!--
+      This file is part of RdXmlLibrary project.
+      Visit https://github.com/kant2002/rdxmllibrary for latest version.
+      If you have modifications specific to this Nuget package,
+      please contribute back.
+
+      Look at the https://github.com/hez2010/EFCore.NativeAOT.RdGenerator for automatic
+      code generation for EF Core.
+  -->
+    <Application>
+        <Assembly Name="Npgsql.EntityFrameworkCore.PostgreSQL" Dynamic="Required All">
+            <Type Name="Microsoft.EntityFrameworkCore.LTree" Dynamic="Required All" />
+            <Type Name="Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.Mapping.NpgsqlArrayArrayTypeMapping+SingleDimensionalArrayComparer`1" Dynamic="Required All" />
+            <Type Name="Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.Mapping.NpgsqlArrayArrayTypeMapping+SingleDimensionalArrayComparer`1[Microsoft.EntityFrameworkCore.LTree]" Dynamic="Required All" />
+        </Assembly>
+    </Application>
+</Directives>
