@@ -14,6 +14,7 @@
 		<Type Name="Avalonia.Animation.Easings.QuadraticEaseIn" Dynamic="Required All" />
 		<Type Name="Avalonia.Animation.Easings.QuadraticEaseOut" Dynamic="Required All" />
 		<Type Name="Avalonia.Animation.Easings.CubicEaseOut" Dynamic="Required All" />
+		<Type Name="Avalonia.Animation.Easings.LinearEasing" Dynamic="Required All" />
 	</Assembly>
 
 	<Assembly Name="Avalonia.Themes.Default" Dynamic="Required All"></Assembly>
