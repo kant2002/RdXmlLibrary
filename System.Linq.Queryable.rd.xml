@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Directives>
+  <Application>
+    <!--
+	  This file is part of RdXmlLibrary project.
+	  Visit https://github.com/kant2002/rdxmllibrary for latest version.
+	  If you have modifications specific to this Nuget package,
+	  please contribute back.
+  -->
+    <Assembly Name="System.Linq.Queryable" Dynamic="Required All">
+      <!-- If sorting key type is int -->
+      <Type Name="System.Linq.Queryable" Dynamic="Required All">
+        <Method Name="OrderBy" Dynamic="Required All">
+          <GenericArgument Name="System.Object,System.Private.CoreLib" />
+          <GenericArgument Name="System.Int32,System.Private.CoreLib" />
+        </Method>
+        <Method Name="OrderByDescending" Dynamic="Required All">
+          <GenericArgument Name="System.Object,System.Private.CoreLib" />
+          <GenericArgument Name="System.Int32,System.Private.CoreLib" />
+        </Method>
+      </Type>
+    </Assembly>
+  </Application>
+</Directives>
